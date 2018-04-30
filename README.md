@@ -12,3 +12,8 @@ $ file data/master.csv
 data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 
 ```
+
+### Order of file
+
+1. Embedding.ipynb
+2. LSTM.ipynb
