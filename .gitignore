@@ -1,13 +1,10 @@
 *.Trash-1000
-
 *.DS_Store
 
 *.ipynb_checkpoints
 *__pycache__
 
-gitfree/*
-!gitfree/.gitkeep
-
 *.vscode
 
-**/data
+data/*
+!data/.gitkeep
