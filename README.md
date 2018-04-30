@@ -4,6 +4,11 @@
 
 ### Data load (On linux shell)
 
-```
+```bash
+
 $ . load-data.sh
+
+$ file data/master.csv
+data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
+
 ```
