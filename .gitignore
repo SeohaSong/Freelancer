@@ -9,3 +9,5 @@ gitfree/*
 !gitfree/.gitkeep
 
 *.vscode
+
+**/data
