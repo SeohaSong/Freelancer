@@ -4,6 +4,11 @@
 
 ### Data load
 
-```bash
+```
 . load-data.sh
+```
+
+```python
+for i in range(10):
+    print(i)
 ```
