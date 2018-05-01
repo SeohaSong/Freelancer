@@ -91,3 +91,22 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 
 - Underscore case
 ![](./img/10.png)
+
+
+## Description - LSTM
+
+### Hyper Parameters
+
+- rnn_size: 128
+- batch_n: 128
+- iteration_n: 4096
+
+### Result (On vanilla LSTM)
+
+- Normal
+![](./img/11.png)
+![](./img/13.png)
+
+- Underscore
+![](./img/12.png)
+![](./img/13.png)    
