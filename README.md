@@ -18,7 +18,8 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 ## Logical order of file
 
 1. Embedding.ipynb
-2. LSTM.ipynb
+2. Batch.ipynb
+3. LSTM.ipynb
 
 ## About data
 
