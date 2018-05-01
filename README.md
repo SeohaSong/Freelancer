@@ -21,6 +21,7 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 2. Batch.ipynb
 3. LSTM.ipynb
 
+
 ## About data
 
 - 원본 데이터 10만개
@@ -33,8 +34,8 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
     - review: 영화에 대한 리뷰 문장
     - label: 긍정(pos),  부정(neg) 두 종류의 값
     
-## Description - Embedding
 
+## Description - Embedding
 
 ### 데이터 전처리
 
@@ -60,3 +61,24 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 ![](./img/6.png)
 ![](./img/7.png)
 ![](./img/8.png)
+
+
+## Description - Batch
+
+### 배열 구축
+
+ - 최대 문장 길이
+     - Normal: 80
+     - Underscore: 160
+     
+ - 데이터셋 Shape
+     - X
+         - Normal: (50000, 80, 128) 
+         - Underscore: (50000, 160, 128)
+     - y: (50000, 2)
+ 
+ - 데이터셋 용량
+     - X
+         - Normal: 1.9GB
+         - Underscore: 3.8GB
+     - y: 169KB
