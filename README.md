@@ -4,6 +4,7 @@
 
 > 송서하, 양우식, 정민성
 
+
 ## Data load (On linux shell)
 
 ```bash
@@ -82,3 +83,11 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
          - Normal: 1.9GB
          - Underscore: 3.8GB
      - y: 169KB
+     
+### 임배딩 상태 확인 (by L2 norm)
+
+- Normal case
+![](./img/9.png)
+
+- Underscore case
+![](./img/10.png)
