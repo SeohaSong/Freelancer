@@ -87,9 +87,11 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 ### 임배딩 상태 확인 (by L2 norm)
 
 - Normal case
+
 ![](./img/9.png)
 
 - Underscore case
+
 ![](./img/10.png)
 
 
@@ -104,9 +106,15 @@ data/master.csv: ISO-8859 text, with very long lines, with CRLF line terminators
 ### Result (On vanilla LSTM)
 
 - Normal
+
 ![](./img/11.png)
 ![](./img/13.png)
 
 - Underscore
+
 ![](./img/12.png)
-![](./img/14.png)    
+![](./img/14.png)
+
+## Description - One word attack
+
+![](./img/15.png)
