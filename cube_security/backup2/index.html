@@ -1,0 +1,33 @@
+<html lang='ko'>
+
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./index.css">
+    <script src="./js/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- 시작 페이지 -->
+      <div data-page='main' align="center">
+          <img src="KGB_logo.png" height="500" width="500">
+      </div>
+
+      <div class='form'>
+        <div data-page='main' class="question" id='page-main'>
+
+        <input data-name='pw' type="text" required/>
+        <label>PASSWORD</label>
+        <div align="center">
+          <button data-name='btn' class='btn'>ENTER</button>
+        </div>
+      </div>
+
+    <!-- 비밀번호 정답 -->
+    <p data-password='true' id='password'>christmas</p>
+
+  </body>
+
+  <script src='./js/main.js'></script>
+
+</html>

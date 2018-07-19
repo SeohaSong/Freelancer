@@ -1,0 +1,26 @@
+body {
+  padding-top: 100px;
+}
+
+
+#page-main {
+  text-align: center;
+}
+#page-main > .btn {
+  cursor: pointer;
+}
+
+
+#page-o {
+  text-align: center;
+}
+
+
+#page-x {
+  text-align: center;
+}
+
+
+#password {
+  display: none;
+}

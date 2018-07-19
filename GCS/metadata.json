@@ -1,0 +1,17 @@
+{
+  "key": [
+    "mp",
+    "dp",
+    "df"
+  ],
+  "url": {
+    "mp": "https://s3.ap-northeast-2.amazonaws.com/seohasong/public/GCS/MOVIE_PAY.csv",
+    "dp": "https://s3.ap-northeast-2.amazonaws.com/seohasong/public/GCS/DRAMA_PAY.csv",
+    "df": "https://s3.ap-northeast-2.amazonaws.com/seohasong/public/GCS/DRAMA_FREE.csv"
+  },
+  "path": {
+    "mp": "./data/MOVIE_PAY.csv",
+    "dp": "./data/DRAMA_PAY.csv",
+    "df": "./data/DRAMA_FREE.csv"
+  }
+}
