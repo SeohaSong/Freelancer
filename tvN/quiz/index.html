@@ -8,17 +8,45 @@
 
   <body>
 
-    <div class='keyboard'>
-      <div data-key=1></div>
-      <div data-key=2></div>
-      <div data-key=3></div>
-      <div data-key=4></div>
-      <div data-key=5></div>
-      <div data-key=6></div>
-      <div data-key=7></div>
-      <div data-key=8></div>
-      <div data-key=9></div>
-      <div data-key=0></div>
+    <!-- 환경설정 [제한시간(time-pressure), ...] -->
+    <span id='config' data-config
+    data-time-pressure=5></span>
+
+    <!-- 디스플레이 -->
+    <div id='quiz-board'>
+      <div class='keyboard'>
+        <div data-key=1></div>
+        <div data-key=2></div>
+        <div data-key=3></div>
+        <div data-key=4></div>
+        <div data-key=5></div>
+      </div>
+      <div class='status'>
+        <div data-case=i class='case'>
+          <span data-description></span>
+          <br>
+          <span>= </span><span data-answer>?</span>
+        </div>
+        <div data-case=x class='case'>
+          <span class='bad'>X</span>
+        </div>
+        <div data-case=o class='case'>
+            <span class='good'>O</span>
+            <br>
+            <span>정답입니다!</span>
+          </div>
+        <div data-case=i class='countdown'>
+          <span class='bussy' data-countdown></span>
+          <div class='tick'></div>
+        </div>
+      </div>
+      <div class='keyboard'>
+        <div data-key=6></div>
+        <div data-key=7></div>
+        <div data-key=8></div>
+        <div data-key=9></div>
+        <div data-key=0></div>
+      </div>
     </div>
 
   </body>

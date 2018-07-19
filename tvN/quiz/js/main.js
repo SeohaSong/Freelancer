@@ -1,58 +1,93 @@
-$(document).ready(() => {
+let init_display = (keys) => {
+  let set_display = (keys) => {
+    let height = keys.css('height');
+    let height_ = parseInt(height);
+    keys.css('width', height);
+    keys.css('line-height', (height_+4)+'px');
+    keys.css('font-size', height_/3);
+  }
+  set_display(keys);
+  $(window).resize(() => {
+    set_display(keys);
+  })
+  $.each(keys, (i, v) => {
+    let key = $(v);
+    key.html(key.data('key'));
+  });
+}
 
-  let keys = $('[data-key]');
-  $.each(keys, (i, v) => {let key = $(v); key.html(key.data('key'))});
+
+let set_case = (case_) => {
+  $('[data-case]').removeClass('on');
+  $('[data-case='+case_+']').addClass('on');
+}
+
+
+let set_quiz = () => {
 
   let quiz = data[Math.floor(Math.random()*data.length)];
   let inputs = quiz.inputs;
   let operations = quiz.operations;
 
   let output = parseInt(inputs[0]);
+  let description = inputs[0]
   for (let i=0; i<operations.length; i++) {
-    let input = parseInt(inputs[i+1]);
-    output = operations[i] == '+' ? output+input : output-input;
+    let operation = operations[i];
+    let input = inputs[i+1];
+    let input_ = parseInt(input);
+    description += ' '+operation+' '+input
+    output = operation == '+' ? output+input_ : output-input_;
   }
+  output += '';
 
+  $('[data-description]').html(description);
+  set_case('i');
+
+  return output;
+}
+
+
+$(document).ready(() => {
+
+  let config = $('[data-config]');
+  let time_pressure = config.data('time-pressure');
+
+  let answer = '';
+  let answer_view = $('[data-answer]');
+  let countdown = time_pressure;
+  let keys = $('[data-key]');
+  init_display(keys)
+
+  let supervisor = setInterval(() => {
+    $('[data-countdown]').html(countdown);
+    if (countdown == 0) {
+      keys.unbind('click');
+      answer = '';
+      answer_view.html('?');
+      countdown = time_pressure;
+      set_case('x');
+    } else {
+      if (countdown == time_pressure) {
+        output = set_quiz();
+        keys.click((e) => {
+          let key = $(e.currentTarget);
+          answer += key.data('key');
+          answer_view.html(answer);
+          if (output == answer){
+            clearInterval(supervisor);
+            set_case('o');
+          }
+          key.addClass('clicked');
+          setTimeout(() => {
+            key.removeClass('clicked');
+          }, 200);
+        });
+      }
+      console.log(output);
+      countdown -= 1;
+    }
+  }, 1000)
 });
-
-// let main = $('*[data-page=main]');
-// let pw = main.find('*[data-name=pw]');
-
-
-// function change_page(i) {
-//   let pages = ['./index.html', './o.html', './x.html'];
-//   window.location = pages[i];
-// }
-
-
-// let btn = main.find('*[data-name=btn]');
-
-// let password = $('*[data-password=true]');
-
-// let back_btns = [
-//   $('*[data-page=o]').find('*[data-name=btn]'),
-//   $('*[data-page=x]').find('*[data-name=btn]'),
-// ];
-
-
-// pw.focus()
-
-// btn.click(() => {
-//   let password_ = password.text();
-//   let pw_ = pw.val();
-//   pw.val('');
-//   if (pw_ != '') {
-//     if (pw_ == password_) {change_page(1);} else {change_page(2);}
-//   }
-// });
-
-// pw.keypress((e) => {if (e.keyCode == 13) {btn.click();}});
-
-// $.each(back_btns, (i, v) => {v.click(() => {change_page(0);});});
-
-// $(window).keydown((e) => {
-//   if (e.keyCode == 8) {if (password.length == 0) {change_page(0);}}
-// });
 
 
 let data = [
@@ -3386,4 +3421,4 @@ let data = [
       "-"
     ]
   }
-]
+];
