@@ -45,7 +45,7 @@ body {
 }
 #quiz-board > .status span.bussy{
   color: orange;
-  font-size: 200px;
+  font-size: 100px;
 }
 
 #quiz-board > .status > .case.on {
@@ -68,7 +68,6 @@ body {
 }
 #quiz-board > .status > .countdown > span {
   line-height: 152px;
-  font-size: 100px;
   transform: translateX(-50%);
   position: absolute;
 }
