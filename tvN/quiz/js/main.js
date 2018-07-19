@@ -1,5 +1,18 @@
 $(document).ready(() => {
-  console.log(data)
+
+  let keys = $('[data-key]');
+  $.each(keys, (i, v) => {let key = $(v); key.html(key.data('key'))});
+
+  let quiz = data[Math.floor(Math.random()*data.length)];
+  let inputs = quiz.inputs;
+  let operations = quiz.operations;
+
+  let output = parseInt(inputs[0]);
+  for (let i=0; i<operations.length; i++) {
+    let input = parseInt(inputs[i+1]);
+    output = operations[i] == '+' ? output+input : output-input;
+  }
+
 });
 
 // let main = $('*[data-page=main]');
@@ -50,8 +63,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "102"
+    ]
   },
   {
     "inputs": [
@@ -60,8 +72,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "102"
+    ]
   },
   {
     "inputs": [
@@ -70,8 +81,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "103"
+    ]
   },
   {
     "inputs": [
@@ -80,8 +90,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "103"
+    ]
   },
   {
     "inputs": [
@@ -90,8 +99,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "105"
+    ]
   },
   {
     "inputs": [
@@ -100,8 +108,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "107"
+    ]
   },
   {
     "inputs": [
@@ -110,8 +117,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "108"
+    ]
   },
   {
     "inputs": [
@@ -120,8 +126,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "109"
+    ]
   },
   {
     "inputs": [
@@ -130,8 +135,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "126"
+    ]
   },
   {
     "inputs": [
@@ -140,8 +144,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "127"
+    ]
   },
   {
     "inputs": [
@@ -150,8 +153,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "128"
+    ]
   },
   {
     "inputs": [
@@ -160,8 +162,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "136"
+    ]
   },
   {
     "inputs": [
@@ -170,8 +171,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "137"
+    ]
   },
   {
     "inputs": [
@@ -180,8 +180,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "138"
+    ]
   },
   {
     "inputs": [
@@ -190,8 +189,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "146"
+    ]
   },
   {
     "inputs": [
@@ -200,8 +198,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "148"
+    ]
   },
   {
     "inputs": [
@@ -210,8 +207,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "150"
+    ]
   },
   {
     "inputs": [
@@ -220,8 +216,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "156"
+    ]
   },
   {
     "inputs": [
@@ -230,8 +225,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "157"
+    ]
   },
   {
     "inputs": [
@@ -240,8 +234,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "158"
+    ]
   },
   {
     "inputs": [
@@ -250,8 +243,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "158"
+    ]
   },
   {
     "inputs": [
@@ -260,8 +252,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "159"
+    ]
   },
   {
     "inputs": [
@@ -270,8 +261,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "160"
+    ]
   },
   {
     "inputs": [
@@ -280,8 +270,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "162"
+    ]
   },
   {
     "inputs": [
@@ -290,8 +279,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "163"
+    ]
   },
   {
     "inputs": [
@@ -300,8 +288,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "164"
+    ]
   },
   {
     "inputs": [
@@ -310,8 +297,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "165"
+    ]
   },
   {
     "inputs": [
@@ -320,8 +306,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "167"
+    ]
   },
   {
     "inputs": [
@@ -330,8 +315,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "168"
+    ]
   },
   {
     "inputs": [
@@ -340,8 +324,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "175"
+    ]
   },
   {
     "inputs": [
@@ -350,8 +333,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "137"
+    ]
   },
   {
     "inputs": [
@@ -360,8 +342,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "147"
+    ]
   },
   {
     "inputs": [
@@ -370,8 +351,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "163"
+    ]
   },
   {
     "inputs": [
@@ -380,8 +360,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "167"
+    ]
   },
   {
     "inputs": [
@@ -390,8 +369,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "169"
+    ]
   },
   {
     "inputs": [
@@ -400,8 +378,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "172"
+    ]
   },
   {
     "inputs": [
@@ -410,8 +387,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "173"
+    ]
   },
   {
     "inputs": [
@@ -420,8 +396,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "179"
+    ]
   },
   {
     "inputs": [
@@ -430,8 +405,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "185"
+    ]
   },
   {
     "inputs": [
@@ -440,8 +414,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "189"
+    ]
   },
   {
     "inputs": [
@@ -450,8 +423,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "193"
+    ]
   },
   {
     "inputs": [
@@ -460,8 +432,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "195"
+    ]
   },
   {
     "inputs": [
@@ -470,8 +441,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "197"
+    ]
   },
   {
     "inputs": [
@@ -480,8 +450,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "201"
+    ]
   },
   {
     "inputs": [
@@ -490,8 +459,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "289"
+    ]
   },
   {
     "inputs": [
@@ -500,8 +468,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "307"
+    ]
   },
   {
     "inputs": [
@@ -510,8 +477,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "479"
+    ]
   },
   {
     "inputs": [
@@ -520,8 +486,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "509"
+    ]
   },
   {
     "inputs": [
@@ -530,8 +495,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "530"
+    ]
   },
   {
     "inputs": [
@@ -540,8 +504,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "596"
+    ]
   },
   {
     "inputs": [
@@ -550,8 +513,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "610"
+    ]
   },
   {
     "inputs": [
@@ -560,8 +522,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "675"
+    ]
   },
   {
     "inputs": [
@@ -570,8 +531,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "695"
+    ]
   },
   {
     "inputs": [
@@ -580,8 +540,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "705"
+    ]
   },
   {
     "inputs": [
@@ -590,8 +549,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "714"
+    ]
   },
   {
     "inputs": [
@@ -600,8 +558,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "720"
+    ]
   },
   {
     "inputs": [
@@ -610,8 +567,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "726"
+    ]
   },
   {
     "inputs": [
@@ -620,8 +576,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "892"
+    ]
   },
   {
     "inputs": [
@@ -630,8 +585,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "937"
+    ]
   },
   {
     "inputs": [
@@ -640,8 +594,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "946"
+    ]
   },
   {
     "inputs": [
@@ -650,8 +603,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "284"
+    ]
   },
   {
     "inputs": [
@@ -660,8 +612,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "240"
+    ]
   },
   {
     "inputs": [
@@ -670,8 +621,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "246"
+    ]
   },
   {
     "inputs": [
@@ -680,8 +630,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "259"
+    ]
   },
   {
     "inputs": [
@@ -690,8 +639,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "267"
+    ]
   },
   {
     "inputs": [
@@ -700,8 +648,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "286"
+    ]
   },
   {
     "inputs": [
@@ -710,8 +657,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "290"
+    ]
   },
   {
     "inputs": [
@@ -720,8 +666,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "294"
+    ]
   },
   {
     "inputs": [
@@ -730,8 +675,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "296"
+    ]
   },
   {
     "inputs": [
@@ -740,8 +684,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "298"
+    ]
   },
   {
     "inputs": [
@@ -750,8 +693,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "302"
+    ]
   },
   {
     "inputs": [
@@ -760,8 +702,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "304"
+    ]
   },
   {
     "inputs": [
@@ -770,8 +711,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "306"
+    ]
   },
   {
     "inputs": [
@@ -780,8 +720,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "308"
+    ]
   },
   {
     "inputs": [
@@ -790,8 +729,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "310"
+    ]
   },
   {
     "inputs": [
@@ -800,8 +738,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "316"
+    ]
   },
   {
     "inputs": [
@@ -810,8 +747,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "318"
+    ]
   },
   {
     "inputs": [
@@ -820,8 +756,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "326"
+    ]
   },
   {
     "inputs": [
@@ -830,8 +765,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "328"
+    ]
   },
   {
     "inputs": [
@@ -840,8 +774,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "340"
+    ]
   },
   {
     "inputs": [
@@ -850,8 +783,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "416"
+    ]
   },
   {
     "inputs": [
@@ -860,8 +792,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "418"
+    ]
   },
   {
     "inputs": [
@@ -870,8 +801,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "426"
+    ]
   },
   {
     "inputs": [
@@ -880,8 +810,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "428"
+    ]
   },
   {
     "inputs": [
@@ -890,8 +819,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "436"
+    ]
   },
   {
     "inputs": [
@@ -900,8 +828,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "438"
+    ]
   },
   {
     "inputs": [
@@ -910,8 +837,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "450"
+    ]
   },
   {
     "inputs": [
@@ -920,8 +846,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "456"
+    ]
   },
   {
     "inputs": [
@@ -930,8 +855,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "458"
+    ]
   },
   {
     "inputs": [
@@ -940,8 +864,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "460"
+    ]
   },
   {
     "inputs": [
@@ -950,8 +873,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "462"
+    ]
   },
   {
     "inputs": [
@@ -960,8 +882,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "467"
+    ]
   },
   {
     "inputs": [
@@ -970,8 +891,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "468"
+    ]
   },
   {
     "inputs": [
@@ -980,8 +900,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "469"
+    ]
   },
   {
     "inputs": [
@@ -990,8 +909,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "470"
+    ]
   },
   {
     "inputs": [
@@ -1000,8 +918,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "472"
+    ]
   },
   {
     "inputs": [
@@ -1010,8 +927,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "476"
+    ]
   },
   {
     "inputs": [
@@ -1020,8 +936,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "478"
+    ]
   },
   {
     "inputs": [
@@ -1030,8 +945,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "480"
+    ]
   },
   {
     "inputs": [
@@ -1040,8 +954,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "482"
+    ]
   },
   {
     "inputs": [
@@ -1050,8 +963,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "486"
+    ]
   },
   {
     "inputs": [
@@ -1060,8 +972,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "486"
+    ]
   },
   {
     "inputs": [
@@ -1070,8 +981,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "490"
+    ]
   },
   {
     "inputs": [
@@ -1080,8 +990,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "492"
+    ]
   },
   {
     "inputs": [
@@ -1090,8 +999,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "496"
+    ]
   },
   {
     "inputs": [
@@ -1100,8 +1008,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "498"
+    ]
   },
   {
     "inputs": [
@@ -1110,8 +1017,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "502"
+    ]
   },
   {
     "inputs": [
@@ -1120,8 +1026,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "503"
+    ]
   },
   {
     "inputs": [
@@ -1130,8 +1035,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "504"
+    ]
   },
   {
     "inputs": [
@@ -1140,8 +1044,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "506"
+    ]
   },
   {
     "inputs": [
@@ -1150,8 +1053,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "520"
+    ]
   },
   {
     "inputs": [
@@ -1160,8 +1062,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "537"
+    ]
   },
   {
     "inputs": [
@@ -1170,8 +1071,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "571"
+    ]
   },
   {
     "inputs": [
@@ -1180,8 +1080,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "639"
+    ]
   },
   {
     "inputs": [
@@ -1190,8 +1089,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "673"
+    ]
   },
   {
     "inputs": [
@@ -1200,8 +1098,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "724"
+    ]
   },
   {
     "inputs": [
@@ -1210,8 +1107,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "741"
+    ]
   },
   {
     "inputs": [
@@ -1220,8 +1116,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "792"
+    ]
   },
   {
     "inputs": [
@@ -1230,8 +1125,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "812"
+    ]
   },
   {
     "inputs": [
@@ -1240,8 +1134,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "826"
+    ]
   },
   {
     "inputs": [
@@ -1250,8 +1143,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "843"
+    ]
   },
   {
     "inputs": [
@@ -1260,8 +1152,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "851"
+    ]
   },
   {
     "inputs": [
@@ -1270,8 +1161,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "854"
+    ]
   },
   {
     "inputs": [
@@ -1280,8 +1170,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "857"
+    ]
   },
   {
     "inputs": [
@@ -1290,8 +1179,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "863"
+    ]
   },
   {
     "inputs": [
@@ -1300,8 +1188,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "865"
+    ]
   },
   {
     "inputs": [
@@ -1310,8 +1197,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "871"
+    ]
   },
   {
     "inputs": [
@@ -1320,8 +1206,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "874"
+    ]
   },
   {
     "inputs": [
@@ -1330,8 +1215,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "891"
+    ]
   },
   {
     "inputs": [
@@ -1340,8 +1224,7 @@ let data = [
     ],
     "operations": [
       "+"
-    ],
-    "output": "894"
+    ]
   },
   {
     "inputs": [
@@ -1350,8 +1233,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "137"
+    ]
   },
   {
     "inputs": [
@@ -1360,8 +1242,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "138"
+    ]
   },
   {
     "inputs": [
@@ -1370,8 +1251,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "156"
+    ]
   },
   {
     "inputs": [
@@ -1380,8 +1260,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "159"
+    ]
   },
   {
     "inputs": [
@@ -1390,8 +1269,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "173"
+    ]
   },
   {
     "inputs": [
@@ -1400,8 +1278,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "175"
+    ]
   },
   {
     "inputs": [
@@ -1410,8 +1287,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "180"
+    ]
   },
   {
     "inputs": [
@@ -1420,8 +1296,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "192"
+    ]
   },
   {
     "inputs": [
@@ -1430,8 +1305,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "194"
+    ]
   },
   {
     "inputs": [
@@ -1440,8 +1314,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "195"
+    ]
   },
   {
     "inputs": [
@@ -1450,8 +1323,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "198"
+    ]
   },
   {
     "inputs": [
@@ -1460,8 +1332,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "201"
+    ]
   },
   {
     "inputs": [
@@ -1470,8 +1341,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "204"
+    ]
   },
   {
     "inputs": [
@@ -1480,8 +1350,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "207"
+    ]
   },
   {
     "inputs": [
@@ -1490,8 +1359,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "210"
+    ]
   },
   {
     "inputs": [
@@ -1500,8 +1368,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "216"
+    ]
   },
   {
     "inputs": [
@@ -1510,8 +1377,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "219"
+    ]
   },
   {
     "inputs": [
@@ -1520,8 +1386,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "237"
+    ]
   },
   {
     "inputs": [
@@ -1530,8 +1395,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "240"
+    ]
   },
   {
     "inputs": [
@@ -1540,8 +1404,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "246"
+    ]
   },
   {
     "inputs": [
@@ -1550,8 +1413,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "249"
+    ]
   },
   {
     "inputs": [
@@ -1560,8 +1422,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "258"
+    ]
   },
   {
     "inputs": [
@@ -1570,8 +1431,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "261"
+    ]
   },
   {
     "inputs": [
@@ -1580,8 +1440,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "264"
+    ]
   },
   {
     "inputs": [
@@ -1590,8 +1449,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "267"
+    ]
   },
   {
     "inputs": [
@@ -1600,8 +1458,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "270"
+    ]
   },
   {
     "inputs": [
@@ -1610,8 +1467,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "270"
+    ]
   },
   {
     "inputs": [
@@ -1620,8 +1476,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "273"
+    ]
   },
   {
     "inputs": [
@@ -1630,8 +1485,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "276"
+    ]
   },
   {
     "inputs": [
@@ -1640,8 +1494,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "279"
+    ]
   },
   {
     "inputs": [
@@ -1650,8 +1503,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "285"
+    ]
   },
   {
     "inputs": [
@@ -1660,8 +1512,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "289"
+    ]
   },
   {
     "inputs": [
@@ -1670,8 +1521,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "291"
+    ]
   },
   {
     "inputs": [
@@ -1680,8 +1530,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "294"
+    ]
   },
   {
     "inputs": [
@@ -1690,8 +1539,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "297"
+    ]
   },
   {
     "inputs": [
@@ -1700,8 +1548,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "306"
+    ]
   },
   {
     "inputs": [
@@ -1710,8 +1557,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "308"
+    ]
   },
   {
     "inputs": [
@@ -1720,8 +1566,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "318"
+    ]
   },
   {
     "inputs": [
@@ -1730,8 +1575,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "326"
+    ]
   },
   {
     "inputs": [
@@ -1740,8 +1584,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "327"
+    ]
   },
   {
     "inputs": [
@@ -1750,8 +1593,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "329"
+    ]
   },
   {
     "inputs": [
@@ -1760,8 +1602,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "346"
+    ]
   },
   {
     "inputs": [
@@ -1770,8 +1611,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "349"
+    ]
   },
   {
     "inputs": [
@@ -1780,8 +1620,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "357"
+    ]
   },
   {
     "inputs": [
@@ -1790,8 +1629,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "361"
+    ]
   },
   {
     "inputs": [
@@ -1800,8 +1638,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "365"
+    ]
   },
   {
     "inputs": [
@@ -1810,8 +1647,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "365"
+    ]
   },
   {
     "inputs": [
@@ -1820,8 +1656,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "369"
+    ]
   },
   {
     "inputs": [
@@ -1830,8 +1665,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "381"
+    ]
   },
   {
     "inputs": [
@@ -1840,8 +1674,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "384"
+    ]
   },
   {
     "inputs": [
@@ -1850,8 +1683,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "385"
+    ]
   },
   {
     "inputs": [
@@ -1860,8 +1692,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "403"
+    ]
   },
   {
     "inputs": [
@@ -1870,8 +1701,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "439"
+    ]
   },
   {
     "inputs": [
@@ -1880,8 +1710,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "457"
+    ]
   },
   {
     "inputs": [
@@ -1890,8 +1719,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "459"
+    ]
   },
   {
     "inputs": [
@@ -1900,8 +1728,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "460"
+    ]
   },
   {
     "inputs": [
@@ -1910,8 +1737,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "461"
+    ]
   },
   {
     "inputs": [
@@ -1920,8 +1746,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "463"
+    ]
   },
   {
     "inputs": [
@@ -1930,8 +1755,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "465"
+    ]
   },
   {
     "inputs": [
@@ -1940,8 +1764,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "467"
+    ]
   },
   {
     "inputs": [
@@ -1950,8 +1773,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "469"
+    ]
   },
   {
     "inputs": [
@@ -1960,8 +1782,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "471"
+    ]
   },
   {
     "inputs": [
@@ -1970,8 +1791,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "473"
+    ]
   },
   {
     "inputs": [
@@ -1980,8 +1800,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "475"
+    ]
   },
   {
     "inputs": [
@@ -1990,8 +1809,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "479"
+    ]
   },
   {
     "inputs": [
@@ -2000,8 +1818,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "479"
+    ]
   },
   {
     "inputs": [
@@ -2010,8 +1827,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "481"
+    ]
   },
   {
     "inputs": [
@@ -2020,8 +1836,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "498"
+    ]
   },
   {
     "inputs": [
@@ -2030,8 +1845,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "517"
+    ]
   },
   {
     "inputs": [
@@ -2040,8 +1854,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "536"
+    ]
   },
   {
     "inputs": [
@@ -2050,8 +1863,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "384"
+    ]
   },
   {
     "inputs": [
@@ -2060,8 +1872,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "395"
+    ]
   },
   {
     "inputs": [
@@ -2070,8 +1881,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "430"
+    ]
   },
   {
     "inputs": [
@@ -2080,8 +1890,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "479"
+    ]
   },
   {
     "inputs": [
@@ -2090,8 +1899,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "485"
+    ]
   },
   {
     "inputs": [
@@ -2100,8 +1908,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "530"
+    ]
   },
   {
     "inputs": [
@@ -2110,8 +1917,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "574"
+    ]
   },
   {
     "inputs": [
@@ -2120,8 +1926,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "576"
+    ]
   },
   {
     "inputs": [
@@ -2130,8 +1935,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "620"
+    ]
   },
   {
     "inputs": [
@@ -2140,8 +1944,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "640"
+    ]
   },
   {
     "inputs": [
@@ -2150,8 +1953,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "671"
+    ]
   },
   {
     "inputs": [
@@ -2160,8 +1962,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "671"
+    ]
   },
   {
     "inputs": [
@@ -2170,8 +1971,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "675"
+    ]
   },
   {
     "inputs": [
@@ -2180,8 +1980,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "702"
+    ]
   },
   {
     "inputs": [
@@ -2190,8 +1989,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "710"
+    ]
   },
   {
     "inputs": [
@@ -2200,8 +1998,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "720"
+    ]
   },
   {
     "inputs": [
@@ -2210,8 +2007,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "732"
+    ]
   },
   {
     "inputs": [
@@ -2220,8 +2016,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "756"
+    ]
   },
   {
     "inputs": [
@@ -2230,8 +2025,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "764"
+    ]
   },
   {
     "inputs": [
@@ -2240,8 +2034,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "764"
+    ]
   },
   {
     "inputs": [
@@ -2250,8 +2043,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "795"
+    ]
   },
   {
     "inputs": [
@@ -2260,8 +2052,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "802"
+    ]
   },
   {
     "inputs": [
@@ -2270,8 +2061,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "831"
+    ]
   },
   {
     "inputs": [
@@ -2280,8 +2070,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "839"
+    ]
   },
   {
     "inputs": [
@@ -2290,8 +2079,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "845"
+    ]
   },
   {
     "inputs": [
@@ -2300,8 +2088,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "845"
+    ]
   },
   {
     "inputs": [
@@ -2310,8 +2097,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "846"
+    ]
   },
   {
     "inputs": [
@@ -2320,8 +2106,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "891"
+    ]
   },
   {
     "inputs": [
@@ -2330,8 +2115,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "916"
+    ]
   },
   {
     "inputs": [
@@ -2340,8 +2124,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "974"
+    ]
   },
   {
     "inputs": [
@@ -2350,8 +2133,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "120"
+    ]
   },
   {
     "inputs": [
@@ -2360,8 +2142,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "126"
+    ]
   },
   {
     "inputs": [
@@ -2370,8 +2151,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "156"
+    ]
   },
   {
     "inputs": [
@@ -2380,8 +2160,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "180"
+    ]
   },
   {
     "inputs": [
@@ -2390,8 +2169,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "182"
+    ]
   },
   {
     "inputs": [
@@ -2400,8 +2178,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "193"
+    ]
   },
   {
     "inputs": [
@@ -2410,8 +2187,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "203"
+    ]
   },
   {
     "inputs": [
@@ -2420,8 +2196,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "236"
+    ]
   },
   {
     "inputs": [
@@ -2430,8 +2205,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "295"
+    ]
   },
   {
     "inputs": [
@@ -2440,8 +2214,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "389"
+    ]
   },
   {
     "inputs": [
@@ -2450,8 +2223,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "410"
+    ]
   },
   {
     "inputs": [
@@ -2460,8 +2232,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "417"
+    ]
   },
   {
     "inputs": [
@@ -2470,8 +2241,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "418"
+    ]
   },
   {
     "inputs": [
@@ -2480,8 +2250,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "427"
+    ]
   },
   {
     "inputs": [
@@ -2490,8 +2259,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "459"
+    ]
   },
   {
     "inputs": [
@@ -2500,8 +2268,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "463"
+    ]
   },
   {
     "inputs": [
@@ -2510,8 +2277,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "485"
+    ]
   },
   {
     "inputs": [
@@ -2520,8 +2286,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "491"
+    ]
   },
   {
     "inputs": [
@@ -2530,8 +2295,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "493"
+    ]
   },
   {
     "inputs": [
@@ -2540,8 +2304,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "498"
+    ]
   },
   {
     "inputs": [
@@ -2550,8 +2313,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "547"
+    ]
   },
   {
     "inputs": [
@@ -2560,8 +2322,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "586"
+    ]
   },
   {
     "inputs": [
@@ -2570,8 +2331,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "601"
+    ]
   },
   {
     "inputs": [
@@ -2580,8 +2340,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "619"
+    ]
   },
   {
     "inputs": [
@@ -2590,8 +2349,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "681"
+    ]
   },
   {
     "inputs": [
@@ -2600,8 +2358,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "683"
+    ]
   },
   {
     "inputs": [
@@ -2610,8 +2367,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "684"
+    ]
   },
   {
     "inputs": [
@@ -2620,8 +2376,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "746"
+    ]
   },
   {
     "inputs": [
@@ -2630,8 +2385,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "812"
+    ]
   },
   {
     "inputs": [
@@ -2640,8 +2394,7 @@ let data = [
     ],
     "operations": [
       "-"
-    ],
-    "output": "875"
+    ]
   },
   {
     "inputs": [
@@ -2652,8 +2405,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "107"
+    ]
   },
   {
     "inputs": [
@@ -2664,8 +2416,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "136"
+    ]
   },
   {
     "inputs": [
@@ -2676,8 +2427,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "140"
+    ]
   },
   {
     "inputs": [
@@ -2688,8 +2438,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "149"
+    ]
   },
   {
     "inputs": [
@@ -2700,8 +2449,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "162"
+    ]
   },
   {
     "inputs": [
@@ -2712,8 +2460,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "179"
+    ]
   },
   {
     "inputs": [
@@ -2724,8 +2471,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "187"
+    ]
   },
   {
     "inputs": [
@@ -2736,8 +2482,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "190"
+    ]
   },
   {
     "inputs": [
@@ -2748,8 +2493,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "203"
+    ]
   },
   {
     "inputs": [
@@ -2760,8 +2504,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "258"
+    ]
   },
   {
     "inputs": [
@@ -2772,8 +2515,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "210"
+    ]
   },
   {
     "inputs": [
@@ -2784,8 +2526,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "238"
+    ]
   },
   {
     "inputs": [
@@ -2796,8 +2537,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "265"
+    ]
   },
   {
     "inputs": [
@@ -2808,8 +2548,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "364"
+    ]
   },
   {
     "inputs": [
@@ -2820,8 +2559,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "382"
+    ]
   },
   {
     "inputs": [
@@ -2832,8 +2570,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "458"
+    ]
   },
   {
     "inputs": [
@@ -2844,8 +2581,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "460"
+    ]
   },
   {
     "inputs": [
@@ -2856,8 +2592,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "518"
+    ]
   },
   {
     "inputs": [
@@ -2868,8 +2603,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "635"
+    ]
   },
   {
     "inputs": [
@@ -2880,8 +2614,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "695"
+    ]
   },
   {
     "inputs": [
@@ -2892,8 +2625,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "493"
+    ]
   },
   {
     "inputs": [
@@ -2904,8 +2636,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "580"
+    ]
   },
   {
     "inputs": [
@@ -2916,8 +2647,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "638"
+    ]
   },
   {
     "inputs": [
@@ -2928,8 +2658,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "731"
+    ]
   },
   {
     "inputs": [
@@ -2940,8 +2669,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "750"
+    ]
   },
   {
     "inputs": [
@@ -2952,8 +2680,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "754"
+    ]
   },
   {
     "inputs": [
@@ -2964,8 +2691,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "893"
+    ]
   },
   {
     "inputs": [
@@ -2976,8 +2702,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "905"
+    ]
   },
   {
     "inputs": [
@@ -2988,8 +2713,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "924"
+    ]
   },
   {
     "inputs": [
@@ -3000,8 +2724,7 @@ let data = [
     "operations": [
       "+",
       "+"
-    ],
-    "output": "957"
+    ]
   },
   {
     "inputs": [
@@ -3012,8 +2735,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "139"
+    ]
   },
   {
     "inputs": [
@@ -3024,8 +2746,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "170"
+    ]
   },
   {
     "inputs": [
@@ -3036,8 +2757,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "198"
+    ]
   },
   {
     "inputs": [
@@ -3048,8 +2768,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "204"
+    ]
   },
   {
     "inputs": [
@@ -3060,8 +2779,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "240"
+    ]
   },
   {
     "inputs": [
@@ -3072,8 +2790,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "250"
+    ]
   },
   {
     "inputs": [
@@ -3084,8 +2801,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "307"
+    ]
   },
   {
     "inputs": [
@@ -3096,8 +2812,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "347"
+    ]
   },
   {
     "inputs": [
@@ -3108,8 +2823,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "436"
+    ]
   },
   {
     "inputs": [
@@ -3120,8 +2834,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "713"
+    ]
   },
   {
     "inputs": [
@@ -3132,8 +2845,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "130"
+    ]
   },
   {
     "inputs": [
@@ -3144,8 +2856,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "147"
+    ]
   },
   {
     "inputs": [
@@ -3156,8 +2867,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "150"
+    ]
   },
   {
     "inputs": [
@@ -3168,8 +2878,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "189"
+    ]
   },
   {
     "inputs": [
@@ -3180,8 +2889,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "194"
+    ]
   },
   {
     "inputs": [
@@ -3192,8 +2900,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "208"
+    ]
   },
   {
     "inputs": [
@@ -3204,8 +2911,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "210"
+    ]
   },
   {
     "inputs": [
@@ -3216,8 +2922,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "268"
+    ]
   },
   {
     "inputs": [
@@ -3228,8 +2933,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "301"
+    ]
   },
   {
     "inputs": [
@@ -3240,8 +2944,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "481"
+    ]
   },
   {
     "inputs": [
@@ -3252,8 +2955,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "108"
+    ]
   },
   {
     "inputs": [
@@ -3264,8 +2966,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "120"
+    ]
   },
   {
     "inputs": [
@@ -3276,8 +2977,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "130"
+    ]
   },
   {
     "inputs": [
@@ -3288,8 +2988,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "137"
+    ]
   },
   {
     "inputs": [
@@ -3300,8 +2999,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "216"
+    ]
   },
   {
     "inputs": [
@@ -3312,8 +3010,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "236"
+    ]
   },
   {
     "inputs": [
@@ -3324,8 +3021,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "239"
+    ]
   },
   {
     "inputs": [
@@ -3336,8 +3032,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "286"
+    ]
   },
   {
     "inputs": [
@@ -3348,8 +3043,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "391"
+    ]
   },
   {
     "inputs": [
@@ -3360,8 +3054,7 @@ let data = [
     "operations": [
       "-",
       "-"
-    ],
-    "output": "402"
+    ]
   },
   {
     "inputs": [
@@ -3372,8 +3065,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "169"
+    ]
   },
   {
     "inputs": [
@@ -3384,8 +3076,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "179"
+    ]
   },
   {
     "inputs": [
@@ -3396,8 +3087,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "196"
+    ]
   },
   {
     "inputs": [
@@ -3408,8 +3098,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "284"
+    ]
   },
   {
     "inputs": [
@@ -3420,8 +3109,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "297"
+    ]
   },
   {
     "inputs": [
@@ -3432,8 +3120,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "301"
+    ]
   },
   {
     "inputs": [
@@ -3444,8 +3131,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "326"
+    ]
   },
   {
     "inputs": [
@@ -3456,8 +3142,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "406"
+    ]
   },
   {
     "inputs": [
@@ -3468,8 +3153,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "524"
+    ]
   },
   {
     "inputs": [
@@ -3480,8 +3164,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "576"
+    ]
   },
   {
     "inputs": [
@@ -3492,8 +3175,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "192"
+    ]
   },
   {
     "inputs": [
@@ -3504,8 +3186,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "273"
+    ]
   },
   {
     "inputs": [
@@ -3516,8 +3197,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "326"
+    ]
   },
   {
     "inputs": [
@@ -3528,8 +3208,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "386"
+    ]
   },
   {
     "inputs": [
@@ -3540,8 +3219,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "398"
+    ]
   },
   {
     "inputs": [
@@ -3552,8 +3230,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "430"
+    ]
   },
   {
     "inputs": [
@@ -3564,8 +3241,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "456"
+    ]
   },
   {
     "inputs": [
@@ -3576,8 +3252,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "467"
+    ]
   },
   {
     "inputs": [
@@ -3588,8 +3263,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "468"
+    ]
   },
   {
     "inputs": [
@@ -3600,8 +3274,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "497"
+    ]
   },
   {
     "inputs": [
@@ -3612,8 +3285,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "180"
+    ]
   },
   {
     "inputs": [
@@ -3624,8 +3296,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "182"
+    ]
   },
   {
     "inputs": [
@@ -3636,8 +3307,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "308"
+    ]
   },
   {
     "inputs": [
@@ -3648,8 +3318,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "470"
+    ]
   },
   {
     "inputs": [
@@ -3660,8 +3329,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "472"
+    ]
   },
   {
     "inputs": [
@@ -3672,8 +3340,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "517"
+    ]
   },
   {
     "inputs": [
@@ -3684,8 +3351,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "582"
+    ]
   },
   {
     "inputs": [
@@ -3696,8 +3362,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "625"
+    ]
   },
   {
     "inputs": [
@@ -3708,8 +3373,7 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "629"
+    ]
   },
   {
     "inputs": [
@@ -3720,7 +3384,6 @@ let data = [
     "operations": [
       "+",
       "-"
-    ],
-    "output": "736"
+    ]
   }
 ]

@@ -1,26 +1,15 @@
-body {
-  padding-top: 100px;
-}
-
-
-#page-main {
+.keyboard > div {
+  width: 80px;
+  height: 80px;
+  border: 2px solid black;
+  border-radius: 50%;
+  line-height: 84px;
   text-align: center;
-}
-#page-main > .btn {
-  cursor: pointer;
-}
-
-
-#page-o {
-  text-align: center;
+  font-size: 30px;
+  transition: 0.5s;
 }
 
-
-#page-x {
-  text-align: center;
-}
-
-
-#password {
-  display: none;
+.keyboard > div:hover {
+  background: black;
+  color: white;
 }
