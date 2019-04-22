@@ -31,6 +31,9 @@ export class AppComponent {
   }
   
   codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'C', 0, 'E']
+  password = '00000000'
+  reset_state = false
+  secret_str = ''
   lock = false
   val = ''
 
@@ -76,19 +79,51 @@ export class AppComponent {
   }
 
   async interact(code) {
+
+    if (this.reset_state) {
+      if (code != 'C' && code != 'E')
+      this.val += code
+      if (this.val.length >= 8) {
+        this.password = this.val.substring(0, 8)
+        this.lock = this.reset_state = false
+        this.bar_node.style.color = 'black'
+        this.val = ''
+        return
+      }
+    }
+    if (this.reset_state) return
+
+    if (this.lock) {
+      this.secret_str += code
+      if (this.secret_str.length > 8) {
+        let len_ = this.secret_str.length
+        this.secret_str = this.secret_str.substring(len_-8, len_)
+      }
+      if (this.secret_str == 'CCCCCCCE') {
+        this.bar_node.style.background = 'white'
+        this.bar_node.style.color = 'black'
+        this.lock = false
+        this.val = ''
+      }
+      else if (this.secret_str == 'CECECECE') {
+        this.bar_node.style.background = 'white'
+        this.bar_node.style.color = 'red'
+        this.reset_state = true
+        this.val = ''
+      }
+    }
     if (this.lock) return
-    
+
     if (code == 'C') this.val = ''
     else if (code == 'E') this.val = this.val.substring(0, this.val.length-1)
     else if (this.val.length < 8) {
       this.val += code
-      if (this.val.length >= 8) this.lock = true
     }
-
-    if (this.lock) {
-      if (this.val == '11111111') {
+    if (this.val.length >= 8) {
+      this.lock = true
+      if (this.val == this.password) {
         this.bar_node.style.background = 'black'
-        this.bar_node.style.color = 'lightgreen'
+        this.bar_node.style.color = 'red'
       } else {
         this.bar_node.style.background = 'gray'
         await this._hold(1000)
