@@ -1,6 +1,5 @@
 (
     trap 'check-error $LINENO' ERR
-    
     app_name=$( pwd )
     app_name=${app_name##*/}
     cd client
