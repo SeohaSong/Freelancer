@@ -1,3 +1,17 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <div id='background'>
+    <div id="main">
+      <div id="bar">{{ val }}</div>
+      <div id='btns'>
+        <div class='content'>
+          <button (touchstart)="interact(code)" *ngFor="let code of codes" class='btn' mat-button>
+            {{ code }}
+          </button>          
+        </div>
+      </div>
+    </div>
+    <div id='msg'>
+      LOADING ...
+    </div>
+  </div>
 </ion-app>
