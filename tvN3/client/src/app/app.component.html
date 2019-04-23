@@ -3,23 +3,15 @@
     <div id="main">
       <div id="bar">{{ str }}</div>
       <div id='btns'>
-        <button (touchstart)="interact(val)" *ngFor="let val of codes" class='btn' mat-button>
-          {{ val }}
-        </button>          
+        <button (touchstart)="interact(val)" *ngFor="let val of codes" class='btn' mat-button>{{ val }}</button>
       </div>
     </div>
-    <div id='controller1'>
-      <button (touchstart)='move(val)' *ngFor='let val of cross_btns' mat-button>
-        {{ val }}
-      </button>
+    <div *ngIf='controller' id='controller1'>
+      <button (touchstart)='move(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
     </div>
-    <div id='controller2'>
-      <button (touchstart)='resize(val)' *ngFor='let val of cross_btns' mat-button>
-        {{ val }}
-      </button>
+    <div *ngIf='controller' id='controller2'>
+      <button (touchstart)='resize(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
     </div>
-    <div id='msg'>
-      LOADING
-    </div>
+    <div id='msg'>LOADING</div>
   </div>
 </ion-app>

@@ -1,7 +1,6 @@
 #background {
     width: 100%;
     height: 100%;
-    background: black;
     #main {
         position: fixed;
         top: calc(100% * 43 / 248);
@@ -9,16 +8,15 @@
         transform: translateX(-50%);
         width: calc(100% * 115 / 192);
         height: calc(100% * 166 / 248);
-        transition: 0.5s;
         opacity: 0;
         #bar {
             position: relative;
-            background: white;
             text-align: left;
             overflow: hidden;
             width: 100%;
             height: calc(100% * 26 / 166);
-            font-size: 80px;
+            font-size: 100px;
+            border: 1px solid gray;
         }
         #btns {
             position: relative;
@@ -32,7 +30,6 @@
                 position: relative;
                 width: calc(100% * 30 / 115);
                 height: calc(100% * 25 / 140);
-                background: white;
                 color: black;
                 border-radius: 0;
                 font-size: 60px;
@@ -60,11 +57,9 @@
             width: 40px;
             height: 40px;
             border: 1px dotted gray;
-            color: white;
         }
     }
     #msg {
-        color: white;
         font-size: 100px;
         position: fixed;
         top: 50%;

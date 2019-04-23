@@ -34,7 +34,9 @@ export class AppComponent {
   codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'C', 0, 'E']
   password = '0000'
   state = 'default'
+  controller = true
   secret_str = ''
+  unit = 1/400
   lock = true
   str = ''
 
@@ -42,6 +44,10 @@ export class AppComponent {
   msg_node: HTMLElement
   bar_node: HTMLElement
   btns_node: HTMLElement
+  width: number
+  height: number
+  left: number
+  top: number
 
   _hold(period) {
     return new Promise(resolve => {
@@ -71,6 +77,14 @@ export class AppComponent {
       this.msg_node.style.display = 'none'
       this.main_node.style.opacity = '1'
       this.lock = false
+      this.width = parseInt(window.getComputedStyle(this.main_node)
+                                  .getPropertyValue('width'))
+      this.height = parseInt(window.getComputedStyle(this.main_node)
+                                   .getPropertyValue('height'))
+      this.left = parseInt(window.getComputedStyle(this.main_node)
+                                 .getPropertyValue('left'))
+      this.top = parseInt(window.getComputedStyle(this.main_node)
+                                .getPropertyValue('top'))
     })
   }
 
@@ -112,7 +126,8 @@ export class AppComponent {
 
     if (code == 'C') this.str = ''
     else if (code == 'E') {
-      if (this.str == this.password) {
+      if (this.str == '04292019') this.controller = !this.controller
+      else if (this.str == this.password) {
         this.bar_node.style.background = 'black'
         this.bar_node.style.color = 'red'
         this.state = 'finish'
@@ -126,30 +141,34 @@ export class AppComponent {
   }
 
   move(val) {
-    let t = window.getComputedStyle(this.main_node).getPropertyValue('top')
-    let l = window.getComputedStyle(this.main_node).getPropertyValue('left')
     if (val == 'u') {
-      this.main_node.style.top = parseInt(t)-window.innerHeight/200+'px'
+      this.top = this.top-window.innerHeight*this.unit
+      this.main_node.style.top = this.top+'px'
     } else if (val == 'r') {
-      this.main_node.style.left = parseInt(l)+window.innerWidth/200+'px'
+      this.left = this.left+window.innerWidth*this.unit
+      this.main_node.style.left = this.left+'px'
     } else if (val == 'd') {
-      this.main_node.style.top = parseInt(t)+window.innerHeight/200+'px'
+      this.top = this.top+window.innerHeight*this.unit
+      this.main_node.style.top = this.top+'px'
     } else if (val == 'l') {
-      this.main_node.style.left = parseInt(l)-window.innerWidth/200+'px'
+      this.left = this.left-window.innerWidth*this.unit
+      this.main_node.style.left = this.left+'px'
     }
   }
 
   resize(val) {
-    let w = window.getComputedStyle(this.main_node).getPropertyValue('width')
-    let h = window.getComputedStyle(this.main_node).getPropertyValue('height')
     if (val == 'u') {
-      this.main_node.style.height = parseInt(h)-window.innerHeight/200+'px'
+      this.height = this.height+window.innerHeight*this.unit
+      this.main_node.style.height = this.height+'px'
     } else if (val == 'r') {
-      this.main_node.style.width = parseInt(w)+window.innerWidth/200+'px'
+      this.width = this.width+window.innerWidth*this.unit
+      this.main_node.style.width = this.width+'px'
     } else if (val == 'd') {
-      this.main_node.style.height = parseInt(h)+window.innerHeight/200+'px'
+      this.height = this.height-window.innerHeight*this.unit
+      this.main_node.style.height = this.height+'px'
     } else if (val == 'l') {
-      this.main_node.style.width = parseInt(w)-window.innerWidth/200+'px'
+      this.width = this.width-window.innerWidth*this.unit
+      this.main_node.style.width = this.width+'px'
     }
   }
 }
