@@ -1,17 +1,25 @@
 <ion-app>
   <div id='background'>
     <div id="main">
-      <div id="bar">{{ val }}</div>
+      <div id="bar">{{ str }}</div>
       <div id='btns'>
-        <div class='content'>
-          <button (touchstart)="interact(code)" *ngFor="let code of codes" class='btn' mat-button>
-            {{ code }}
-          </button>          
-        </div>
+        <button (touchstart)="interact(val)" *ngFor="let val of codes" class='btn' mat-button>
+          {{ val }}
+        </button>          
       </div>
     </div>
+    <div id='controller1'>
+      <button (touchstart)='move(val)' *ngFor='let val of cross_btns' mat-button>
+        {{ val }}
+      </button>
+    </div>
+    <div id='controller2'>
+      <button (touchstart)='resize(val)' *ngFor='let val of cross_btns' mat-button>
+        {{ val }}
+      </button>
+    </div>
     <div id='msg'>
-      LOADING ...
+      LOADING
     </div>
   </div>
 </ion-app>

@@ -1,51 +1,74 @@
 #background {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
     background: black;
     #main {
-        position: relative;
-        width: 75%;
-        opacity: 0;
+        position: fixed;
+        top: calc(100% * 43 / 248);
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% * 115 / 192);
+        height: calc(100% * 166 / 248);
         transition: 0.5s;
+        opacity: 0;
         #bar {
+            position: relative;
             background: white;
-            line-height: 100px;
-            text-align: right;
-            font-size: 80px;
+            text-align: left;
             overflow: hidden;
-            height: 100px;
+            width: 100%;
+            height: calc(100% * 26 / 166);
+            font-size: 80px;
         }
         #btns {
-            &:after {
-                content: '';
-                padding-bottom: calc(100% * 4 / 3);
-                display: block;
-            }
-            margin-top: 30px;
             position: relative;
-            .content {
-                position: absolute;
-                width: 100%;
-                height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            height: calc(100% * 140 / 166);
+            .btn {
+                position: relative;
+                width: calc(100% * 30 / 115);
+                height: calc(100% * 25 / 140);
                 background: white;
-                .btn {
-                    padding: 0px;
-                    border: 1px dotted whitesmoke;
-                    border-radius: 0;
-                    width: calc(100% / 3);
-                    height: calc(100% / 4);
-                    font-size: 80px;
-                }
+                color: black;
+                border-radius: 0;
+                font-size: 60px;
             }
+        }
+    }
+    #controller1 {
+        left: calc(100% * 39 / 192);
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: 120px;
+    }
+    #controller2 {
+        right: calc(100% * 39 / 192);
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: 120px;
+    }
+    #controller1, #controller2 {
+        button {
+            min-width: 0;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border: 1px dotted gray;
+            color: white;
         }
     }
     #msg {
         color: white;
         font-size: 100px;
         position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
