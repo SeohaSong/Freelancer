@@ -93,7 +93,7 @@ export class AppComponent {
 
     if (this.state == 'change') {
       if (code == 'C') this.str = ''
-      else if (code == 'E') {
+      else if (this.str.length > 0, code == 'E') {
         this.bar_node.style.background = 'green'
         await this._hold(1000)
         this.password = this.str.substring(0, 8)
@@ -113,12 +113,12 @@ export class AppComponent {
       if (['CCCCCCCC', 'EEEEEEEE'].includes(this.secret_str)) {
         this.bar_node.style.color = 'black'
         this.str = ''
-        if (this.secret_str == 'CCCCCCCC') {
-          this.bar_node.style.background = 'white'
-          this.state = 'default'
-        } else if (this.secret_str == 'EEEEEEEE') {
+        if (this.secret_str == 'EEEEEEEE') {
           this.bar_node.style.background = 'red'
           this.state = 'change'
+        } else if (this.secret_str == 'CCCCCCCC') {
+          this.bar_node.style.background = 'white'
+          this.state = 'default'
         }
       }
       return
@@ -128,7 +128,6 @@ export class AppComponent {
     else if (code == 'E') {
       if (this.str == '04292019') this.controller = !this.controller
       else if (this.str == this.password) {
-        this.bar_node.style.background = 'black'
         this.bar_node.style.color = 'red'
         this.state = 'finish'
       } else {
