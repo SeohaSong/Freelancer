@@ -74,9 +74,9 @@ export class AppComponent {
         }
       })
     }).then(() => {
-      this.msg_node.style.display = 'none'
-      this.main_node.style.opacity = '1'
-      this.lock = false
+      let font_height = this.bar_node.offsetHeight
+      this.bar_node.style.fontSize = font_height*0.8+'px'
+      this.bar_node.style.lineHeight = font_height+'px'
       this.width = parseInt(window.getComputedStyle(this.main_node)
                                   .getPropertyValue('width'))
       this.height = parseInt(window.getComputedStyle(this.main_node)
@@ -85,6 +85,9 @@ export class AppComponent {
                                  .getPropertyValue('left'))
       this.top = parseInt(window.getComputedStyle(this.main_node)
                                 .getPropertyValue('top'))
+      this.msg_node.style.display = 'none'
+      this.main_node.style.opacity = '1'
+      this.lock = false
     })
   }
 
