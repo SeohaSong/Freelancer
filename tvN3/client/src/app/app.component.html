@@ -3,14 +3,14 @@
     <div id="main">
       <div id="bar">{{ str }}</div>
       <div id='btns'>
-        <button (click)="interact(val)" *ngFor="let val of codes" class='btn' mat-button>{{ val }}</button>
+        <button (touchstart)="interact(val)" *ngFor="let val of codes" class='btn' mat-button>{{ val }}</button>
       </div>
     </div>
     <div *ngIf='controller' id='controller1'>
-      <button (click)='move(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
+      <button (touchstart)='move(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
     </div>
     <div *ngIf='controller' id='controller2'>
-      <button (click)='resize(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
+      <button (touchstart)='resize(val)' *ngFor='let val of cross_btns' mat-button>{{ val }}</button>
     </div>
     <div id='msg'>LOADING</div>
   </div>
