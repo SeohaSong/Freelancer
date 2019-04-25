@@ -9,7 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import  { MaterialModule } from './material-module'
+import  { MaterialModule } from './material-module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +21,7 @@ import  { MaterialModule } from './material-module'
     IonicModule.forRoot(),
     AppRoutingModule,
     MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     StatusBar,

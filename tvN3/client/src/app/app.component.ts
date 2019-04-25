@@ -96,7 +96,7 @@ export class AppComponent {
 
     if (this.state == 'change') {
       if (code == 'C') this.str = ''
-      else if (this.str.length > 0, code == 'E') {
+      else if (this.str.length > 0 && code == 'E') {
         this.bar_node.style.background = 'green'
         await this._hold(1000)
         this.password = this.str.substring(0, 8)
@@ -123,6 +123,7 @@ export class AppComponent {
           this.bar_node.style.background = 'white'
           this.state = 'default'
         }
+        this.secret_str = ''
       }
       return
     }
