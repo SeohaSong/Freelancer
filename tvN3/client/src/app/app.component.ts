@@ -131,7 +131,7 @@ export class AppComponent {
 
     if (code == 'C') this.str = ''
     else if (code == 'E') {
-      if (this.str == '04292019') this.controller = !this.controller
+      if (this.str == '06092019') this.controller = !this.controller
       else if (this.str == this.password) {
         this.bar_node.style.color = 'red'
         this.state = 'finish'
