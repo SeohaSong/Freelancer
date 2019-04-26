@@ -9,7 +9,7 @@
     cd ..
     gitgit
     cd $HOME_PATH/SEOHASONG/seohasong.github.io
-    sed -i s~/$app_name~~g $app_name/ngsw.json
+    # sed -i s~/$app_name~~g $app_name/ngsw.json
     gitgit
     seohasong
     gitgit

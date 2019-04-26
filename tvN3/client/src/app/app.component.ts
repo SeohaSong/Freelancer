@@ -95,7 +95,7 @@ export class AppComponent {
     if (this.lock) return
 
     if (this.state == 'change') {
-      if ('CE'.includes(code) && this.str.length < 8) this.str += code
+      if (!'CE'.includes(code) && this.str.length < 8) this.str += code
       else if (code == 'C') this.str = ''
       else if (code == 'E' && this.str.length > 0) {
         this.bar_node.style.background = 'green'
