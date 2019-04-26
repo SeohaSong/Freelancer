@@ -9,6 +9,7 @@
     cd ..
     gitgit
     cd $HOME_PATH/SEOHASONG/seohasong.github.io
+    sed -i s~/$app_name~~g ngsw.json
     gitgit
     seohasong
     gitgit
