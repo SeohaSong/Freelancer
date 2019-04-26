@@ -95,15 +95,16 @@ export class AppComponent {
     if (this.lock) return
 
     if (this.state == 'change') {
-      if (code == 'C') this.str = ''
-      else if (this.str.length > 0 && code == 'E') {
+      if ('CE'.includes(code) && this.str.length < 8) this.str += code
+      else if (code == 'C') this.str = ''
+      else if (code == 'E' && this.str.length > 0) {
         this.bar_node.style.background = 'green'
         await this._hold(1000)
         this.password = this.str.substring(0, 8)
         this.bar_node.style.background = 'white'
         this.state = 'default'
         this.str = ''
-      } else if (this.str.length < 8) this.str += code
+      } 
       return
     }
 
