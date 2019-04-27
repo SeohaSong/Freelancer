@@ -9,7 +9,7 @@
     cd ..
     gitgit
     cd $HOME_PATH/SEOHASONG/seohasong.github.io
-    vals="start_url"
+    vals="scope start_url"
     filepath="$app_name/manifest.webmanifest"
     for val in $vals
     do
