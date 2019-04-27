@@ -40,7 +40,6 @@ export class AppComponent {
   main_node: HTMLElement
   msg_node: HTMLElement
   bar_node: HTMLElement
-  btns_node: HTMLElement
   background_node: HTMLElement
   width: number
   height: number
@@ -61,21 +60,21 @@ export class AppComponent {
     this.main_node = document.getElementById('main')
     this.msg_node = document.getElementById('msg')
     this.bar_node = document.getElementById('bar')
-    this.btns_node = document.getElementById('btns')
     this.background_node = document.getElementById('background')
     this.msg_node.style.display = 'block'
     this.main_node.style.opacity = '0'
+    let content_height = 1024
+    this.background_node.style.height = content_height+'px'
     new Promise(resolve => {
       let loop_id = setInterval(() => {
-        if (this.btns_node.offsetHeight > 0) {
+        if (this.background_node.offsetHeight > 0) {
           clearInterval(loop_id)
           resolve()
         }
       })
     }).then(() => {
       let frame_height = window.outerHeight-window.innerHeight
-      let content_height = this.background_node.offsetHeight-frame_height
-      this.background_node.style.height = content_height+'px'
+      this.background_node.style.height = content_height-frame_height+'px'
 
       let font_height = this.bar_node.offsetHeight
       this.bar_node.style.fontSize = font_height*0.8+'px'
