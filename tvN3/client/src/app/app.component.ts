@@ -77,17 +77,11 @@ export class AppComponent {
       let font_height = this.bar_node.offsetHeight
       this.bar_node.style.fontSize = font_height*0.8+'px'
       this.bar_node.style.lineHeight = font_height+'px'
-      this.width = parseInt(window.getComputedStyle(this.main_node)
-                                  .getPropertyValue('width'))
-      this.height = parseInt(window.getComputedStyle(this.main_node)
-                                   .getPropertyValue('height'))
-      this.left = parseInt(window.getComputedStyle(this.main_node)
-                                 .getPropertyValue('left'))
-      this.top = parseInt(window.getComputedStyle(this.main_node)
-                                .getPropertyValue('top'))
       this.msg_node.style.display = 'none'
       this.main_node.style.opacity = '1'
       this.lock = false
+
+      this.str = window.innerHeight+","+window.innerWidth
     })
   }
 
@@ -142,37 +136,5 @@ export class AppComponent {
         this.str = ''
       }
     } else if (this.str.length < 8) this.str += code
-  }
-
-  move(val) {
-    if (val == 'u') {
-      this.top = this.top-window.innerHeight*this.unit
-      this.main_node.style.top = this.top+'px'
-    } else if (val == 'r') {
-      this.left = this.left+window.innerWidth*this.unit
-      this.main_node.style.left = this.left+'px'
-    } else if (val == 'd') {
-      this.top = this.top+window.innerHeight*this.unit
-      this.main_node.style.top = this.top+'px'
-    } else if (val == 'l') {
-      this.left = this.left-window.innerWidth*this.unit
-      this.main_node.style.left = this.left+'px'
-    }
-  }
-
-  resize(val) {
-    if (val == 'u') {
-      this.height = this.height+window.innerHeight*this.unit
-      this.main_node.style.height = this.height+'px'
-    } else if (val == 'r') {
-      this.width = this.width+window.innerWidth*this.unit
-      this.main_node.style.width = this.width+'px'
-    } else if (val == 'd') {
-      this.height = this.height-window.innerHeight*this.unit
-      this.main_node.style.height = this.height+'px'
-    } else if (val == 'l') {
-      this.width = this.width-window.innerWidth*this.unit
-      this.main_node.style.width = this.width+'px'
-    }
   }
 }
