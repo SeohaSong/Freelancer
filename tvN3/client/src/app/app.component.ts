@@ -44,6 +44,7 @@ export class AppComponent {
   msg_node: HTMLElement
   bar_node: HTMLElement
   btns_node: HTMLElement
+  background_node: HTMLElement
   width: number
   height: number
   left: number
@@ -64,6 +65,7 @@ export class AppComponent {
     this.msg_node = document.getElementById('msg')
     this.bar_node = document.getElementById('bar')
     this.btns_node = document.getElementById('btns')
+    this.background_node = document.getElementById('background')
     this.msg_node.style.display = 'block'
     this.main_node.style.opacity = '0'
     new Promise(resolve => {
@@ -74,14 +76,17 @@ export class AppComponent {
         }
       })
     }).then(() => {
+      let frame_height = window.outerHeight-window.innerHeight
+      let content_height = this.background_node.offsetHeight-frame_height
+      this.background_node.style.height = content_height+'px'
+
       let font_height = this.bar_node.offsetHeight
       this.bar_node.style.fontSize = font_height*0.8+'px'
       this.bar_node.style.lineHeight = font_height+'px'
+      
       this.msg_node.style.display = 'none'
       this.main_node.style.opacity = '1'
       this.lock = false
-
-      this.str = window.innerHeight+","+window.innerWidth
     })
   }
 

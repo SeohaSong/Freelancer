@@ -12,6 +12,11 @@
 
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
+
+body {
+    background: black;
+}
+
 #msg {
     font-size: 100px;
     position: fixed;
