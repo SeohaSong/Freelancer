@@ -30,13 +30,10 @@ export class AppComponent {
     window.onresize = this.setDisplay.bind(this)
   }
   
-  cross_btns = ['', 'u', '', 'l', '', 'r', '', 'd', '']
   codes = [1, 2, 3, 4, 5, 6, 7, 8, 9, 'C', 0, 'E']
   password = '0000'
   state = 'default'
-  controller = true
   secret_str = ''
-  unit = 1/400
   lock = true
   str = ''
 
@@ -130,8 +127,7 @@ export class AppComponent {
 
     if (code == 'C') this.str = ''
     else if (code == 'E') {
-      if (this.str == '06092019') this.controller = !this.controller
-      else if (this.str == this.password) {
+      if (this.str == this.password) {
         this.bar_node.style.color = 'red'
         this.state = 'finish'
       } else {
