@@ -57,14 +57,13 @@ export class AppComponent {
   }
 
   async setDisplay() {
-    this.main_node = document.getElementById('main')
     this.msg_node = document.getElementById('msg')
     this.bar_node = document.getElementById('bar')
+    this.main_node = document.getElementById('main')
     this.background_node = document.getElementById('background')
-    this.msg_node.style.display = 'block'
     this.main_node.style.opacity = '0'
-    let content_height = 1024
-    this.background_node.style.height = content_height+'px'
+    this.msg_node.style.display = 'block'
+    this.background_node.style.height = 1024+'px'
     new Promise(resolve => {
       let loop_id = setInterval(() => {
         if (this.background_node.offsetHeight > 0) {
@@ -73,13 +72,9 @@ export class AppComponent {
         }
       })
     }).then(() => {
-      let frame_height = window.outerHeight-window.innerHeight
-      this.background_node.style.height = content_height-frame_height+'px'
-
       let font_height = this.bar_node.offsetHeight
       this.bar_node.style.fontSize = font_height*0.8+'px'
       this.bar_node.style.lineHeight = font_height+'px'
-      
       this.msg_node.style.display = 'none'
       this.main_node.style.opacity = '1'
       this.lock = false
