@@ -1,5 +1,6 @@
 #background {
     width: 768px;
+    height: 1024px;
     background: white;
     position: fixed;
     top: 50%;
@@ -19,7 +20,6 @@
             overflow: hidden;
             width: 100%;
             height: calc(100% * 26 / 166);
-            border: 1px solid gray;
         }
         #btns {
             position: relative;

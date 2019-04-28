@@ -63,7 +63,6 @@ export class AppComponent {
     this.background_node = document.getElementById('background')
     this.main_node.style.opacity = '0'
     this.msg_node.style.display = 'block'
-    this.background_node.style.height = 1024+'px'
     new Promise(resolve => {
       let loop_id = setInterval(() => {
         if (this.background_node.offsetHeight > 0) {
